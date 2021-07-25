@@ -3,28 +3,9 @@ from tkinter import font
 import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
-
-root =Tk()
-root.option_add("*tearOff", False)
-
-# Make the app responsive
-root.columnconfigure(index=0, weight=1)
-root.columnconfigure(index=1, weight=1)
-root.columnconfigure(index=2, weight=1)
-root.rowconfigure(index=0, weight=1)
-root.rowconfigure(index=1, weight=1)
-root.rowconfigure(index=2, weight=1)
-
-# Create a style
-style = ttk.Style(root)
+from student import Student
 
 
-
-# Import the tcl file
-root.tk.call("source", "Azure-ttk-theme/azure-dark.tcl")
-
-# Set the theme with the theme_use method
-style.theme_use("azure-dark")
 
 class Face_Recognition_System:
     def __init__(self,root):
@@ -32,33 +13,7 @@ class Face_Recognition_System:
         self.root.geometry("1195x750+0+0")
         self.root.title("Face Recognitiom System")
         self.root.option_add("*tearOff", False)
-
-        '''
-        #first imane
-        img = Image.open(r"D:/Projects/FaceTraining/assets/img/home.jpg")
-        img = img.resize((500,130),Image.ANTIALIAS)
-        self.photoimg = ImageTk.PhotoImage(img)
-
-        f_lbl = Label(self.root, image = self.photoimg)
-        f_lbl.place(x = 0,y = 0, width = 500, height = 130)
-
-        #second image
-        img1 = Image.open(r"D:/Projects/FaceTraining/assets/img/home.jpg")
-        img1 = img1.resize((500,130),Image.ANTIALIAS)
-        self.photoimg1 = ImageTk.PhotoImage(img1)
-
-        f_lbl = Label(self.root, image = self.photoimg1)
-        f_lbl.place(x = 500,y = 0, width = 500, height = 130)
-
-        #third image
-        img2 = Image.open(r"D:/Projects/FaceTraining/assets/img/home.jpg")
-        img2 = img2.resize((500,130),Image.ANTIALIAS)
-        self.photoimg2 = ImageTk.PhotoImage(img2)
         
-
-        f_lbl = Label(self.root, image = self.photoimg2)
-        f_lbl.place(x = 1000,y = 0, width = 500, height = 130)
-        '''
 
         #Bg image
         img3 = Image.open(r"assets/img/bg_img.png")
@@ -66,10 +21,8 @@ class Face_Recognition_System:
         self.photoimg3 = ImageTk.PhotoImage(img3)
 
         bg_img = Label(self.root, image = self.photoimg3)
-        bg_img.place(x = 0,y = 0, width = 1195, height = 765)
+        bg_img.place(x = 0,y = 765, width = 1195, height = 765)
         
-
-
         #student buttom
         img4 = Image.open(r"assets/img/student.png")
         img4 = img4.resize((180,180),Image.ANTIALIAS)
@@ -78,7 +31,7 @@ class Face_Recognition_System:
         bt1 = ttk.Label( image = self.photoimg4, cursor= "hand2")
         bt1.place(x = 95, y = 200, width = 180, height = 180)
 
-        b1_1 = ttk.Button( text = "Students details", style="ToggleButton", cursor= "hand2")
+        b1_1 = ttk.Button( text = "Students details",command = self.student_details , style="ToggleButton", cursor= "hand2")
         b1_1.place(x = 95, y = 350, width = 180, height = 40)
 
 
@@ -163,3 +116,42 @@ class Face_Recognition_System:
 
         b2_4 = ttk.Button(text = "Photo", style="ToggleButton", cursor= "hand2")
         b2_4.place(x = 920, y = 600, width = 180, height = 40)
+
+
+
+
+
+    def student_details(self):
+                self.new_windows = Toplevel(self.root)
+                self.app = Student(self.new_windows)
+
+
+
+
+
+
+
+if __name__ == "__main__":
+        root =Tk()
+        root.option_add("*tearOff", False)
+
+        # Make the app responsive
+        root.columnconfigure(index=0, weight=1)
+        root.columnconfigure(index=1, weight=1)
+        root.columnconfigure(index=2, weight=1)
+        root.rowconfigure(index=0, weight=1)
+        root.rowconfigure(index=1, weight=1)
+        root.rowconfigure(index=2, weight=1)
+
+        # Create a style
+        style = ttk.Style(root)
+
+
+
+# Import the tcl file
+        root.tk.call("source", "Azure-ttk-theme/azure-dark.tcl")
+
+# Set the theme with the theme_use method
+        style.theme_use("azure-dark")
+        obj = Face_Recognition_System(root)
+        root.mainloop()
