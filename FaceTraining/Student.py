@@ -323,7 +323,7 @@ class Student:
                 conn = pyodbc.connect('DRIVER={SQL Server};SERVER=MSI\SQLEXPRESS;database=face_recognition;uid=sa;pwd=250301')
                 print('Connect successfully')  
                 cursor = conn.cursor()
-                cursor .execute("insert into student values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (
+                cursor .execute("INSERT INTO dbo.student(Dep,Course,Year,Semester,Student_id,Name,Division,Roll,Gender,Dob,Email,Phone,Address,Teacher,PhotoSample) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (
 
                                                                                                                         self.var_dep.get(),
                                                                                                                         self.var_course.get(),
