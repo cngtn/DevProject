@@ -46,20 +46,20 @@ class Student:
 
         #Left frame
         Left_frame = ttk.Labelframe(main_frame, text = "Student Details")
-        Left_frame.place(x = 10, y = 10, width =550, height =  600)
+        Left_frame.place(x = 10, y = 10, width =555, height =  600)
 
 
         #student buttom
         img_left = Image.open(r"assets/img/studentDetails.png")
-        img_left = img_left.resize((540,130),Image.ANTIALIAS)
+        img_left = img_left.resize((545,130),Image.ANTIALIAS)
         self.photoimg_left = ImageTk.PhotoImage(img_left)
 
         f_lbl = ttk.Label(Left_frame, image = self.photoimg_left, cursor= "hand2")
-        f_lbl.place(x = 3, y = 0, width = 540, height = 130)
+        f_lbl.place(x = 3, y = 0, width = 545, height = 130)
 
         # Current course information
         current_course_frame = ttk.Labelframe(Left_frame, text = "Current Course information")
-        current_course_frame.place(x = 5, y = 135, width =538, height =  120)
+        current_course_frame.place(x = 5, y = 135, width =543, height =  120)
         
         
         #Dapartment
@@ -107,7 +107,7 @@ class Student:
 
         # Class student information
         class_student_frame = ttk.Labelframe(Left_frame, text = "Class student information")
-        class_student_frame.place(x = 5, y = 260, width =538, height =  320)
+        class_student_frame.place(x = 5, y = 260, width =543, height =  320)
 
         #Student ID
         studentId_label = ttk.Label(class_student_frame, text = "Student ID")
@@ -189,9 +189,42 @@ class Student:
 
         #Radio Buttom
         radionbtn1 = ttk.Radiobutton(class_student_frame, text = "Take photo Sample", value = "yes")
-        radionbtn1.grid(row = 5, column =0)
+        radionbtn1.grid(row = 6, column =1, sticky = W)
         radionbtn2 = ttk.Radiobutton(class_student_frame, text = "No photo Sample", value = "yes")
-        radionbtn2.grid(row = 5, column =1)
+        radionbtn2.grid(row = 6, column =3, sticky = W)
+
+        #Buttom frame
+        btn_frame = ttk.Frame(class_student_frame, border= 5)
+        btn_frame.place(x = 0, y = 250, width =530, height =50)
+
+        save_btn = ttk.Button(btn_frame, text ="Save", width = 15)
+        save_btn.grid(row = 0, column = 0, padx = 10)
+
+        update_btn = ttk.Button(btn_frame, text ="Update", width = 15)
+        update_btn.grid(row = 0, column = 1, padx = 10)
+
+
+        delete_btn = ttk.Button(btn_frame, text ="Delete", width = 15)
+        delete_btn.grid(row = 0, column = 2, padx = 10)
+
+        reset_btn = ttk.Button(btn_frame, text ="Reset", width = 15)
+        reset_btn.grid(row = 0, column = 3, padx = 10)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         #Right frame
