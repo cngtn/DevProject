@@ -29,27 +29,27 @@ style.theme_use("azure-dark")
 class Student:
     def __init__(self,root):
         self.root = root
-        self.root.geometry("1195x750+0+0")
+        self.root.geometry("1195x765+0+0")
         self.root.title("Face Recognitiom System")
         self.root.option_add("*tearOff", False)
 
         #Bg image
         img3 = Image.open(r"assets/img/bg_img.png")
-        img3 = img3.resize((1195,750),Image.ANTIALIAS)
+        img3 = img3.resize((1195,765),Image.ANTIALIAS)
         self.photoimg3 = ImageTk.PhotoImage(img3)
 
         bg_img = ttk.Label(self.root, image = self.photoimg3)
-        bg_img.place(x = 0,y = 0, width = 1195, height = 750)
+        bg_img.place(x = 0,y = 0, width = 1195, height = 765)
 
         main_frame = ttk.Frame(bg_img)
-        main_frame.place(x = 25, y = 110, width = 1145, height = 620)
+        main_frame.place(x = 25, y = 110, width = 1145, height = 635)
 
         #Left frame
         Left_frame = ttk.Labelframe(main_frame, text = "Student Details")
-        Left_frame.place(x = 10, y = 10, width =555, height =  600)
+        Left_frame.place(x = 10, y = 10, width =555, height =  615)
 
 
-        #student buttom
+        #Student details
         img_left = Image.open(r"assets/img/studentDetails.png")
         img_left = img_left.resize((545,130),Image.ANTIALIAS)
         self.photoimg_left = ImageTk.PhotoImage(img_left)
@@ -107,7 +107,7 @@ class Student:
 
         # Class student information
         class_student_frame = ttk.Labelframe(Left_frame, text = "Class student information")
-        class_student_frame.place(x = 5, y = 260, width =543, height =  320)
+        class_student_frame.place(x = 5, y = 260, width =543, height =  335)
 
         #Student ID
         studentId_label = ttk.Label(class_student_frame, text = "Student ID")
@@ -190,27 +190,35 @@ class Student:
         #Radio Buttom
         radionbtn1 = ttk.Radiobutton(class_student_frame, text = "Take photo Sample", value = "yes")
         radionbtn1.grid(row = 6, column =1, sticky = W)
-        radionbtn2 = ttk.Radiobutton(class_student_frame, text = "No photo Sample", value = "yes")
+        radionbtn2 = ttk.Radiobutton(class_student_frame, text = "No photo Sample", value = "no")
         radionbtn2.grid(row = 6, column =3, sticky = W)
 
         #Buttom frame
         btn_frame = ttk.Frame(class_student_frame, border= 5)
-        btn_frame.place(x = 0, y = 250, width =530, height =50)
+        btn_frame.place(x = 0, y = 230, width =530, height =40)
 
-        save_btn = ttk.Button(btn_frame, text ="Save", width = 15)
-        save_btn.grid(row = 0, column = 0, padx = 10)
+        save_btn = ttk.Button(btn_frame, text ="Save",style="ToggleButton", width = 15)
+        save_btn.grid(row = 0, column = 0, padx = 7)
 
-        update_btn = ttk.Button(btn_frame, text ="Update", width = 15)
+        update_btn = ttk.Button(btn_frame, text ="Update",style="ToggleButton", width = 15)
         update_btn.grid(row = 0, column = 1, padx = 10)
 
 
-        delete_btn = ttk.Button(btn_frame, text ="Delete", width = 15)
+        delete_btn = ttk.Button(btn_frame, text ="Delete",style="ToggleButton", width = 15)
         delete_btn.grid(row = 0, column = 2, padx = 10)
 
-        reset_btn = ttk.Button(btn_frame, text ="Reset", width = 15)
+        reset_btn = ttk.Button(btn_frame, text ="Reset",style="ToggleButton", width = 15)
         reset_btn.grid(row = 0, column = 3, padx = 10)
 
+        
+        btn_frame1 = ttk.Frame(class_student_frame, border= 5)
+        btn_frame1.place(x = 0, y = 275, width =530, height =40)
+        
+        take_photo_btn = ttk.Button(btn_frame1, text ="Take photo",style="ToggleButton", width = 37)
+        take_photo_btn.grid(row = 0, column = 0, padx = 7)
 
+        take_photo_btn = ttk.Button(btn_frame1, text ="Upload photo",style="ToggleButton", width = 37)
+        take_photo_btn.grid(row = 0, column = 1, padx = 10)
 
 
 
@@ -229,9 +237,43 @@ class Student:
 
         #Right frame
         Right_frame = ttk.Labelframe(main_frame, text = "Student Details")
-        Right_frame.place(x = 580, y = 10, width =550, height =  600)
+        Right_frame.place(x = 580, y = 10, width =555, height =  615)
 
-        
+        #Student details
+        img_right = Image.open(r"assets/img/Search.png")
+        img_right = img_right.resize((545,130),Image.ANTIALIAS)
+        self.photoimg_right = ImageTk.PhotoImage(img_right)
+
+        f_lbl = ttk.Label(Right_frame, image = self.photoimg_right, cursor= "hand2")
+        f_lbl.place(x = 3, y = 0, width = 545, height = 130)
+
+
+        #============== Search System ====================
+        search_frame = ttk.Labelframe(Right_frame, text = "Search information")
+        search_frame.place(x = 5, y = 135, width =543, height =  80)
+
+        search_label = ttk.Label(search_frame, text = "Search by:", border = 3)
+        search_label.grid(row = 0, column = 0, padx = 10, pady = 5, sticky = W)
+
+        search_combo = ttk.Combobox(search_frame, width =15, state = "readonly")
+        search_combo["values"] = ("Select ", "Roll No", "Number Phone", "Student ID")
+        search_combo.current(0)
+        search_combo.grid(row = 0, column = 1, padx=5, pady=10, ipadx = 10, sticky = W)
+
+
+        search_btn = ttk.Button(search_frame, text ="Search",style="ToggleButton", width = 10)
+        search_btn.grid(row = 0, column = 2, padx = 10)
+
+        showAll_btn = ttk.Button(search_frame, text ="Show all",style="ToggleButton", width = 10)
+        showAll_btn.grid(row = 0, column = 3, padx = 10)
+
+
+
+
+
+
+
+
 
 
 

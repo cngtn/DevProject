@@ -62,11 +62,11 @@ class Face_Recognition_System:
 
         #Bg image
         img3 = Image.open(r"assets/img/bg_img.png")
-        img3 = img3.resize((1195,750),Image.ANTIALIAS)
+        img3 = img3.resize((1195,765),Image.ANTIALIAS)
         self.photoimg3 = ImageTk.PhotoImage(img3)
 
         bg_img = Label(self.root, image = self.photoimg3)
-        bg_img.place(x = 0,y = 0, width = 1195, height = 750)
+        bg_img.place(x = 0,y = 0, width = 1195, height = 765)
         
 
 
