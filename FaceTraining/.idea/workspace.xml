@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa03efec-1568-426c-a552-0484c9ea02fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Travelling/Travelling/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Travelling/Travelling/asgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Travelling/Travelling/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Travelling/Travelling/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Travelling/Travelling/wsgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Travelling/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/FaceTraining.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FaceTraining.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Azure-ttk-theme/azure.tcl" beforeDir="false" afterPath="$PROJECT_DIR$/Azure-ttk-theme/azure.tcl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Azure-ttk-theme/example.py" beforeDir="false" afterPath="$PROJECT_DIR$/Azure-ttk-theme/example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Class.py" beforeDir="false" afterPath="$PROJECT_DIR$/Class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student.py" beforeDir="false" afterPath="$PROJECT_DIR$/Student.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conn.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +30,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.student">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="FaceTraining" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -52,6 +56,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="student" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FaceTraining" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/student.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.student" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -62,6 +93,8 @@
       <option name="presentableId" value="Default" />
       <updated>1627119685444</updated>
       <workItem from="1627119720034" duration="19000" />
+      <workItem from="1627363179056" duration="1384000" />
+      <workItem from="1627476905085" duration="164000" />
     </task>
     <servers />
   </component>
@@ -78,5 +111,9 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/FaceTraining$student.coverage" NAME="student Coverage Results" MODIFIED="1627363655902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

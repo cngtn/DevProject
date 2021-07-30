@@ -1,10 +1,13 @@
+import os
 from tkinter import * 
 from tkinter import font
 import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
 from student import Student
-
+from train import Train
+from face_recognition import Face_Recognition
+from attendance import Attendance
 
 
 class Face_Recognition_System:
@@ -21,7 +24,7 @@ class Face_Recognition_System:
         self.photoimg3 = ImageTk.PhotoImage(img3)
 
         bg_img = Label(self.root, image = self.photoimg3)
-        bg_img.place(x = 0,y = 765, width = 1195, height = 765)
+        bg_img.place(x = 0,y = 0, width = 1195, height = 765)
         
         #student buttom
         img4 = Image.open(r"assets/img/student.png")
@@ -44,7 +47,7 @@ class Face_Recognition_System:
         bt2 = ttk.Label(image = self.photoimg5, cursor= "hand2")
         bt2.place(x = 370, y = 200, width = 180, height = 180)
 
-        b1_2 = ttk.Button(text = "Face Detector", style="ToggleButton", cursor= "hand2")
+        b1_2 = ttk.Button(text = "Face Detector", command = self.face_data, style="ToggleButton", cursor= "hand2")
         b1_2.place(x = 370, y = 350, width = 180, height = 40)
 
 
@@ -57,7 +60,7 @@ class Face_Recognition_System:
         bt3 = ttk.Label(image = self.photoimg6, cursor= "hand2")
         bt3.place(x = 645, y = 200, width = 180, height = 180)
 
-        b1_3 = ttk.Button(text = "Attendance", style="ToggleButton", cursor= "hand2")
+        b1_3 = ttk.Button(text = "Attendance", command = self.attendance_data, style="ToggleButton", cursor= "hand2")
         b1_3.place(x = 645, y = 350, width = 180, height = 40)
 
 
@@ -81,18 +84,18 @@ class Face_Recognition_System:
         bt4 = ttk.Label(image = self.photoimg8, cursor= "hand2")
         bt4.place(x = 95, y = 450, width = 180, height = 180)
 
-        b2_1 = ttk.Button(text = "Training", style="ToggleButton", cursor= "hand2")
+        b2_1 = ttk.Button(text = "Training",command = self.train_data, style="ToggleButton", cursor= "hand2")
         b2_1.place(x = 95, y = 600, width = 180, height = 40)
 
-                #Teacher buttom
-        img9 = Image.open(r"assets/img/teacher.png")
+                #Photo buttom
+        img9 = Image.open(r"assets/img/photo.png")
         img9 = img9.resize((180,180),Image.ANTIALIAS)
         self.photoimg9 = ImageTk.PhotoImage(img9)
 
         bt4 = ttk.Label(image = self.photoimg9, cursor= "hand2")
         bt4.place(x = 370, y = 450, width = 180, height = 180)
 
-        b2_2 = ttk.Button(text = "Teacher", style="ToggleButton", cursor= "hand2")
+        b2_2 = ttk.Button(text = "Photo", style="ToggleButton", cursor= "hand2", command = self.open_img)
         b2_2.place(x = 370, y = 600, width = 180, height = 40)
 
          #Lesson buttom
@@ -117,16 +120,33 @@ class Face_Recognition_System:
         b2_4 = ttk.Button(text = "Photo", style="ToggleButton", cursor= "hand2")
         b2_4.place(x = 920, y = 600, width = 180, height = 40)
 
-
+#================...========================
+    def open_img(self):
+        os.startfile("data")
 
 
 
     def student_details(self):
+        self.new_windows = Toplevel(self.root)
+        self.app = Student(self.new_windows)
+    
+    def train_data(self):
                 self.new_windows = Toplevel(self.root)
-                self.app = Student(self.new_windows)
+                self.app = Train(self.new_windows)
 
 
 
+
+    def face_data(self):
+                self.new_windows = Toplevel(self.root)
+                self.app = Face_Recognition(self.new_windows)
+
+    def attendance_data(self):
+                self.new_windows = Toplevel(self.root)
+                self.app = Attendance(self.new_windows)
+
+
+    
 
 
 
